@@ -1,64 +1,48 @@
-var ThreeHouseshangman = {
-
-
-
-
-}
-
-
 // Valid letters to guess.
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var word; 
-var guess;
-var guessed;
-var remainingGuesses = [ ];
-var counter;           
-var space;              
+// All possible words to guess.
+var characterWords = ["BYLETH", "EDELGARD", "DIMITRI", "CLAUDE", "SOTHIS", "HUBERT", "FERDINAND", "LINHARDT", "CASPAR", "BERNADETTA", "DOROTHEA", "PETRA", "JERITZA", "EMILE", "DEDUE", "FELIX", "ASHE", "SYLVAIN", "MERCEDES", "INGRID", "ANNETTE", "GILBERT", "GUSTAVE", "HILDA", "IGNATZ", "RAPHAEL", "LORENZ", "LYSITHEA", "MARIANNE", "LEONIE", "RHEA", "SEIROS", "SETETH", "FLAYN", "MANUELA", "HANNEMAN", "CYRIL", "JERALT", "ALOIS", "CATHERINE", "SHAMIR", "MONICA", "KRONYA", "TOMAS", "SOLON", "ARUNDEL", "THALES", "CORNELIA", "NEMESIS", "DEATH KNIGHT", "FLAME EMPEROR"];
+console.log(characterWords);
 
-// Get elements
-var showLives = document.getElementById("guessesLeft");
+var characterWords = Math.floor(Math.random()*characterWords.length);
+console.log(characterWords);
 
+var answer = [];
+for (var i = 0; i < characterWords.length; i++) {
+    answer[i] = "_";
+}
 
-var buttons = function () {
-    myButtons = document.getElementById('buttons');
-    letters = document.createElement('ul');
+var guesses = characterWords.length;
+var correctLetter = characterWords.length;
+var guessesLeft = [i];
 
-    for (var i = 0; i < alphabet.length; i++) {
-      letters.id = 'letters';
-      list = document.createElement('li');
-      list.id = 'letter';
-      list.innerHTML = alphabet[i];
-      check();
-      myButtons.appendChild(letters);
-      letters.appendChild(list);
+if (guesses > 0) {
+  for (var j = 0; j < characterWords.length; j++)
+    if (characterWords[j] === letters) {
+        answer[j] = letters;
+        remainingLetters--;
     }
-  }
+} 
 
-["BYLETH", "EDELGARD", "DIMITRI", "CLAUDE", "SOTHIS", "HUBERT", "FERDINAND", "LINHARDT", "CASPAR", "BERNADETTA", "DOROTHEA", "PETRA", "JERITZA", "EMILE", "DEDUE", "FELIX", "ASHE", "SYLVAIN", "MERCEDES", "INGRID", "ANNETTE", "GILBERT", "GUSTAVE", "HILDA", "IGNATZ", "RAPHAEL", "LORENZ", "LYSITHEA", "MARIANNE", "LEONIE", "RHEA", "SEIROS", "SETETH", "FLAYN", "MANUELA", "HANNEMAN", "CYRIL", "JERALT", "ALOIS", "CATHERINE", "SHAMIR", "MONICA", "KRONYA", "TOMAS", "SOLON", "ARUNDEL", "THALES", "CORNELIA", "NEMESIS",]
-
-
+var remainingLetters = characterWords.length;
 
 
-
-var CorrectLetter = document.getElementById();
-var WrongLetter = document.getElementById();
-
+document.getElementById("#word");
+document.getElementById("#remainingGuesses");
 
 document.onkeyup = function(event) {
-    var letter = event.key.toUpperCase();
+  var letters = event.key.toUpperCase();
+  
+  if (correctLetter === true) {
+    indexHTML(characterWords);
+  }
 
-    if (letters === CorrectLetter) {
-        word
-    }
-c*
+  else (correctLetter === false);{
+  (guessesLeft --- 1);
+  }
 
-    else (letters === WrongLetter) ;{
-        
-
-    }
-  };
+  console.log(event.key);
+};
 
 
 
-  var wins = 0;
-  var losses = 0;
