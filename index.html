@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hangman - Three Houses Edition</title>
+<style>
+    #GameOver{
+        text-align:center;
+        color: white;
+        background-color:black;
+        visibility: hidden;
+        position:absolute;
+        width: 100%;
+        height: 100%;
+        font-size: 30px;
+        top: 0px;
+        left: 0px;
+    }
+
+    #loseText{
+        position:relative;
+        margin-top: 20%;
+    }
+    
+</style>
+
 </head>
 <body>
 <h1>Hangman - Fire Emblem: Three Houses edition</h1>
@@ -14,11 +35,20 @@
 <h3>Press any key to get started with the game. Press any key again to restart the game.</h3>
 
 
-<span id="word">_,_,_,_,_, _,_,_,_,_,_,_</span>
+<span id="character"></span>
 
-<h4>Wrong Letters:</h4>
+<h4>Wrong Letters:</h4><div id="incorrect"></div>
+<h4>Guesses Left:</h4><div id="guessesLeft">8</div>
+
 <h5>Wins:</h5>
 <h5>Loses:</h5>
+
+<div id="GameOver">
+    <div id="loseText">
+    You lose! The answer was:<br>
+    <span id="answerReveal">answer</span>
+    </div>
+</div>
 
 <script src=assets/javascript/game.js></script>
 </body>
